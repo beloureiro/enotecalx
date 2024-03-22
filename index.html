@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Widget de Contato - Instagram e Reservas</title>
+<link rel="stylesheet" href="estilo.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+
+<div class="widget-contato">
+    <!-- Ícone do Instagram -->
+    <a href="https://www.instagram.com/seuusuario" class="icone instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+    <!-- Ícone de reserva -->
+    <a href="https://4menu.today/enotecalx/joinus" class="icone reserva" target="_blank" rel="noopener noreferrer"><i class="fas fa-calendar-alt"></i></a>
+</div>
+
+<script>
+    window.onload = function() {
+        var links = document.querySelectorAll('a');
+        links.forEach(function(link) {
+            // Garante que todos os links sejam abertos no contexto apropriado
+            link.target = link.href.startsWith('tel:') ? "_self" : "_parent";
+        });
+    };
+</script>
+
+</body>
+</html>
